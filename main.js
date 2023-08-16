@@ -1,4 +1,4 @@
-//My Account Details
+// My Account Details
 let accountDetails = {
   accountName: "Ayodeji Abolaji",
   pin: 1234,
@@ -7,9 +7,9 @@ let accountDetails = {
 
 // Alert Message
 alert(`Welcome to FRED ATM Service,
-Kindly click 'ok' to continue.`);
+  Kindly click 'OK' to continue.`);
 
-//My account name and pin prompt
+// My account name and pin prompt
 let accountName = prompt("Enter your name:");
 let accountPin = +prompt("Enter your PIN:");
 
@@ -23,47 +23,47 @@ if (
   // Prompt for operation
   let accountOperation = prompt(
     `Choose an operation:
-    1. Savings
-    2. Current`
+      1. Savings
+      2. Current`
   );
 
-  //Account Operations
+  // Account Operations
   if (accountOperation === "1" || accountOperation === "2") {
-    let accountOperation = prompt(`Select an Operation:
-    1. Withdrawal
-    2. Balance Inquiry
-    3. Transfer
-    4. Quick Teller
-    5. Exist`);
-  } else {
-    alert("You the not choose the right operation");
-  }
+    let subOperation = prompt(`Select an Operation:
+      1. Withdrawal
+      2. Account Balance
+      3. Transfer
+      4. Quick Teller
+      5. Quit`);
 
-  // The Withdrawal operation
-  if (accountOperation === "1") {
-    let withdrawalAmount = +prompt("Enter your withdrawal amount:");
-    if (
-      withdrawalAmount > 0 &&
-      withdrawalAmount <= accountDetails.accountBalance
-    ) {
-      accountDetails.accountBalance -= withdrawalAmount;
-      alert(
-        `Withdrawal successful! Remaining balance: $${accountDetails.accountBalance}`
-      );
+    // Sub-Operations
+    if (subOperation === "1") {
+      // Withdrawal operation
+      let withdrawalAmount = +prompt("Enter your withdrawal amount:");
+      if (
+        withdrawalAmount > 0 &&
+        withdrawalAmount <= accountDetails.accountBalance
+      ) {
+        accountDetails.accountBalance -= withdrawalAmount;
+        alert(
+          `Withdrawal successful! Remaining balance: $${accountDetails.accountBalance}`
+        );
+      } else {
+        alert("Invalid withdrawal amount or insufficient balance.");
+      }
+    } else if (subOperation === "2") {
+      // Account Balance operation
+      alert(`Your current balance: $${accountDetails.accountBalance}`);
     } else {
-      alert("Invalid withdrawal amount or insufficient balance.");
+      alert("Invalid sub-operation.");
     }
-    if (withdrawalAmount === accountDetails.accountBalance) {
-      let accountBalance = prompt(`Do you wish to perform another transaction:
-        1. Yes
-        2. No`);
-        if (accountBalance === "1") {
-            let accountBalance = +prompt(`Select an Operation: $${accountOperation}`):
-          } else (accountBalance === "2") {
-            alert('Thank you for using our ATM Service');
-        }
-    }
-
-    
+  } else if (subOperation === "3") {
+    // Bank Transfer
+    let accountTransfer;
+  } else if (subOperation === "3") {
+    // Bank Transfer
+    let accountTransfer;
+  } else {
+    alert("You did not choose the right operation.");
   }
 }
