@@ -1,40 +1,39 @@
-// My Account Details
-let accountDetails = {
-  accountName: "Ayodeji Abolaji",
-  pin: 1234,
-  accountBalance: 10000,
-};
-
 // Alert Message
 alert(`Welcome to FRED Bank,
       Kindly click 'OK' to continue.`);
 
-// My account name and pin prompt
-let accountName = prompt("Enter your name:");
-let accountPin = +prompt("Enter your PIN:");
+// My Account Details
 
-// To Verify the name and PIN entered
-if (
-  accountName !== accountDetails.accountName ||
-  accountPin !== accountDetails.pin
-) {
-  alert("Invalid Name or PIN.");
-} else {
+let accountPin = true;
+let accountBalance = 10000;
+
+while (accountPin) {
+  // My pin prompt
+  let myPin = prompt("Enter your PIN:");
+
+  while (myPin.length !== 4) {
+    myPin = prompt("We can only accept your 4 digit Pin");
+  }
+
+  // To Verify the name and PIN entered
+  // if (accountPin !== accountDetails.pin) {
+  //   alert("Invalid PIN.");
+  // } else {
   // Prompt for operation
   let accountOperation = prompt(
     `Choose an operation:
-          1. Savings
-          2. Current`
+            1. Savings
+            2. Current`
   );
 
   // Account Operations
   if (accountOperation === "1" || accountOperation === "2") {
     let subOperation = prompt(`Select an Operation:
-          1. Withdrawal
-          2. Account Balance
-          3. Transfer
-          4. Quick Teller
-          5. Quit`);
+            1. Withdrawal
+            2. Account Balance
+            3. Transfer
+            4. Quick Teller
+            5. Quit`);
 
     // Sub-Operations
     if (subOperation === "1") {
@@ -84,8 +83,8 @@ if (
     } else if (subOperation === "4") {
       // Quick Teller operation
       let quickTellerOption = prompt(`Select a Quick Teller option:
-            1. Buy Recharge Card
-            2. Pay for Cable Bills`);
+                1. Buy Recharge Card
+                2. Pay for Cable Bills`);
 
       if (quickTellerOption === "1") {
         // Recharge Mobile Credit
@@ -127,6 +126,7 @@ if (
     } else if (subOperation === "5") {
       // Quit
       alert("Thank you for using FRED ATM Service. Have a great day!");
+      break; // Exit the loop
     } else {
       alert("Invalid sub-operation.");
     }

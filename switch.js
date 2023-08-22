@@ -6,17 +6,17 @@
 };*/
 
 // Alert Message
-alert(`Welcome to FRED Bank,
+alert(`Welcome to FRED Bank!,
     Kindly click 'OK' to continue.`);
 
-// My account name and pin prompt
+// My pin prompt and account details
 let accountDetails = {
-  pin: 1234, // Change this to your actual PIN
-  accountBalance: 10000, // Change this to your actual balance
+  accountPin: true,
+  accountBalance: 10000,
 };
 
-while (true) {
-  let accountPin = +prompt("Enter your PIN:");
+while (accountPin) {
+  let pin = prompt("Enter your PIN:");
 
   // To Verify the name and PIN entered
   if (accountPin !== accountDetails.pin) {
